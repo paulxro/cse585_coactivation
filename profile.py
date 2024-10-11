@@ -4,7 +4,8 @@ import geni.portal as portal
 import geni.rspec.pg as pg
 import os
 
-SCRIPT_DIR = '/local/repository/scripts/'
+CL_REPO_PATH_ABS = "/local/repository/"
+STARTUP_SCRIPT_PATH_REL = "scripts/startup.sh"
 
 
 pc = portal.Context()
@@ -13,15 +14,10 @@ request = pc.makeRequestRSpec()
 
 node = request.RawPC("node")
 
-files = [file for file in os.listdir(SCRIPT_DIR)]
-
-for file in files:
-    os.chmod(SCRIPT_DIR + file, 0o0777)
+node.hardware_type = 'c240g5'
 
 node.addService(
-    pg.Execute(shell="sh", command="/local/repository/scripts/startup.sh")
+    pg.Execute(shell="sh", command=os.path.join(CL_REPO_PATH_ABS, STARTUP_SCRIPT_PATH_REL))
 )
-
-
 
 pc.printRequestRSpec(request)
