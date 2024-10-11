@@ -13,13 +13,13 @@ request = pc.makeRequestRSpec()
 
 node = request.RawPC("node")
 
+node.addService(
+    pg.Execute(shell="sh", command="/local/repository/scripts/startup.sh")
+)
+
 files = [file for file in os.listdir(SCRIPT_DIR)]
 
 for file in files:
     os.chmod('./scripts/' + file, 0o0777)
-
-node.addService(
-    pg.Execute(shell="sh", command="/local/repository/scripts/startup.sh")
-)
 
 pc.printRequestRSpec(request)
