@@ -1,6 +1,6 @@
 # cse585_coactivation
 
-** Codelab Start-up **
+**Codelab Start-up**
 
 *Make sure that you have a reservation active for a c240g5 node.*
 
@@ -12,7 +12,7 @@
 6. Wait for experiment to start.
 7. SSH into the machine via terminal or VSCode (recommended). Proceed to start-up guide.
 
-** Start-up Guide **
+**Start-up Guide**
 
 1. Once you are connected to the node (via ssh), navigate to the repository directory:
 
