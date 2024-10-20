@@ -20,8 +20,8 @@ node.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+michigan-bigdata-PG0:
 
 node.addService(
     pg.Execute(
-        shell="sh", 
-        command=f'sudo {os.path.join(CL_REPO_PATH_ABS, STARTUP_SCRIPT_PATH_REL)}'
+        shell="sh", \
+        command=f"sudo {os.path.join(CL_REPO_PATH_ABS, STARTUP_SCRIPT_PATH_REL)}" \
     )
 )
 
