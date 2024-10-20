@@ -16,7 +16,7 @@ node = request.RawPC("node")
 
 node.hardware_type = 'c240g5'
 
-node.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+michigan-bigdata-PG0:powerinfer_drivers'
+node.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+michigan-bigdata-PG0:powerinfer_driver_plus'
 
 node.addService(
     pg.Execute(
