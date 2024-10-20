@@ -24,10 +24,14 @@
 
 3. Run the start-up script. Make sure to accept all prompts:
 
-`./scripts/startup.sh`
+`sudo ./scripts/startup.sh`
 
 4. Run the extension installations:
 
 `./scripts/extensions.sh`
 
 5. Navigate to the "test.ipynb" and run the first cell. You should see generated output from gpt-2.
+
+## PowerInfer
+
+1. Clone the PowerInfer repository.

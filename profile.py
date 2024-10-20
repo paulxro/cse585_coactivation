@@ -16,8 +16,13 @@ node = request.RawPC("node")
 
 node.hardware_type = 'c240g5'
 
+node.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+michigan-bigdata-PG0:powerinfer_drivers'
+
 node.addService(
-    pg.Execute(shell="sh", command=os.path.join(CL_REPO_PATH_ABS, STARTUP_SCRIPT_PATH_REL))
+    pg.Execute(
+        shell="sh", 
+        command=f'sudo {os.path.join(CL_REPO_PATH_ABS, STARTUP_SCRIPT_PATH_REL)}'
+    )
 )
 
 pc.printRequestRSpec(request)
