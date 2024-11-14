@@ -35,3 +35,12 @@
 ## PowerInfer
 
 1. Clone the PowerInfer repository.
+
+
+## Profiling using Nsight
+Nsight is a profiling tool provided by Nvidia. It shows how much total time is used in GPU kernal. 
+Below is the commands to run the profiler
+
+1. sudo nsys profile --output=model_profile.qdrep --trace=cuda,nvtx,osrt ./build/bin/main -m /local/PowerInfer/ReluLLaMA-7B/llama-7b-relu.powerinfer.gguf -n $number_of_tokens -t $number_of_threads -p $input --vram-budget $vram_budget
+2. sudo nsys stats /local/PowerInfer/model_profile.nsys-rep (See the whole profiling)
+3. sudo nsys stats /local/PowerInfer/model_profile.nsys-rep | awk '/CUDA GPU Kernel Summary/,0' | awk '{sum += $2} END {print "Total CUDA Kernel Time (ns):", sum}' (Just see the total kernal run time.
