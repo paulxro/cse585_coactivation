@@ -18,6 +18,9 @@ node.hardware_type = 'c240g5'
 
 node.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+michigan-bigdata-PG0:powerinfer_driver_plus'
 
+bs = node.Blockstore("bs", "/extra_space")
+bs.size = "128GB"
+
 node.addService(
     pg.Execute(
         shell="sh",
